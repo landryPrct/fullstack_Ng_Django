@@ -1,0 +1,54 @@
+<div class="container">
+  <h1><i class="fa-solid fa-list text-muted"></i> Posts</h1>
+<hr>
+  <a href="#" routerLink="/post/create/" class="btn btn-success"><i class="fa-solid fa-plus"></i>Create New Post</a>
+
+  <div *ngIf="deleteSucces">
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      {{deleteSucces}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+<div class="row">
+<div class="col-4" *ngFor="let post of posts">
+
+<div class="card my-3 " >
+  
+    
+  
+  <div class="card-body shadow shadow-lg justify-content " >
+
+
+   
+    
+     
+     
+       <i> {{ post.id }}</i>
+        <h2> {{ post.title }}</h2>
+        <p > {{ post.body }}</p>
+
+<div *ngFor='let student of students'>
+
+   <p *ngIf='post.created_by==  student.id'>
+     <a  [routerLink]="['/student/', student.id,'view']"  > <i>{{ student.lname }} {{ student.fname }}</i></a>
+   </p>
+    
+  
+</div>
+       
+
+
+        <p class="text-muted">{{ post.created_at}}</p>
+        <div>
+          <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info mx-2"><i class="fa-solid fa-eye"></i></a>
+          <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary mx-2"><i class="fa-solid fa-pen"></i></a>
+          <button type="button" (click)="deletePost(post.id)" class="btn btn-danger mx-2"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+        
+
+    </div>
+ 
+  </div>
+</div>
+</div>
+</div>

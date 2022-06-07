@@ -1,0 +1,75 @@
+<div class="container">
+  <h1>Create New student</h1>
+ 
+  <a href="#" routerLink="/students/index" class="btn btn-primary btn-sm"><i class= 'fa-solid fa-arrow-left '></i> Back</a>
+<!--formulaire-->
+
+  <div class="card my-3"> 
+    <div class="card-body shadow shadow-lg">
+
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="fname">First name:</label>
+      <input
+        formControlName="fname"
+        id="fname"
+        type="text"
+        class="form-control">
+
+      <div *ngIf="f['fname'].touched && f['fname'].invalid" class="alert alert-danger">
+        <div *ngIf="f['fname'].errors && f['fname'].errors['required']">First name is required.</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="lname">Last name:</label>
+      <input
+        formControlName="lname"
+        id="lname"
+        type="text"
+        class="form-control">
+
+      <div *ngIf="f['lname'].touched && f['lname'].invalid" class="alert alert-danger">
+        <div *ngIf="f['lname'].errors && f['lname'].errors['required']">First name is required.</div>
+      </div>
+    </div>
+   
+
+    <div class="form-group">
+      <label for="room_class">Room Class:</label>
+    
+  		<input
+        formControlName="room_class"
+        id="room_class"
+        type="text"
+        class="form-control">
+
+      <div *ngIf="f['room_class'].touched && f['room_class'].invalid" class="alert alert-danger">
+        <div *ngIf="f['room_class'].errors && f['room_class'].errors['required']">room class is required.</div>
+      </div>
+    </div>
+
+     <div class="form-group">
+      <label for="age">Age :</label>
+    
+  		<input
+        formControlName="age"
+        id="age"
+        type="number"
+        class="form-control">
+
+      <div *ngIf="f['age'].touched && f['age'].invalid" class="alert alert-danger">
+        <div *ngIf="f['age'].errors && f['age'].errors['required']">room is required.</div>
+      </div>
+    </div>
+
+
+
+
+    <button class="btn btn-primary my-4" type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+    </div>
+  </div>
+</div>

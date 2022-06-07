@@ -1,0 +1,53 @@
+
+<div class="container">
+  <h1><i class="fa-solid fa-list text-muted"></i> Students</h1>
+<hr>
+  <a href="#" routerLink="/student/create/" class="btn btn-success"><i class="fa-solid fa-plus"></i>Create New Student</a>
+
+  <div *ngIf="deleteSucces">
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      {{deleteSucces}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+
+
+
+
+<div class="card my-3">
+  <div class="card-body shadow shadow-lg">
+<i class='text-muted'>{{students.length}} Etudiants sont enregistrés</i>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>lname</th>
+        <th>fname</th>
+        <th>Age</th>
+        <th>Room Class</th>
+        <th>Created at</th>
+        <th width="">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.id }}</td>
+        <td>{{ student.lname }}</td>
+        <td>{{ student.fname }}</td>
+        <td>{{ student.age }}</td>
+        <td>{{ student.room_class }}</td>
+        <td>{{ student.created_at }}</td>
+        <td>
+          <a href="#" [routerLink]="['/student/', student.id, 'view']" class="btn btn-info mx-2"><i class="fa-solid fa-eye"></i></a>
+          <a href="#" [routerLink]="['/student/', student.id, 'edit']" class="btn btn-primary mx-2"><i class="fa-solid fa-pen"></i></a>
+          <button type="button" (click)="deleteStudent(student.id)" class="btn btn-danger mx-2"><i class="fa-solid fa-trash-can"></i></button>
+        </td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>

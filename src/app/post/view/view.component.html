@@ -1,0 +1,26 @@
+<div class="container">
+  <h1> <i class="fa-solid fa-eye text-muted"></i> View Post</h1>
+
+  <a href="#" routerLink="/post/index" class="btn btn-primary"> <i class="fa-solid fa-arrow-left"></i> Back</a>
+<div class="justify-content-center my-3">
+  <div class="card col-5">
+    <div class="card-body shadow shadow-lg " *ngIf="post">
+      <div>
+        <strong>ID:</strong>
+        <p>{{ post.id }}</p>
+      </div>
+
+      <div>
+        <strong>Title:</strong>
+        <p>{{ post.title }}</p>
+      </div>
+
+      <div>
+        <strong>Body:</strong>
+        <p class='' height=''>{{ post.body }}</p>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+

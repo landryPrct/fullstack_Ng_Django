@@ -1,0 +1,47 @@
+<div class="container">
+	<div class="row justify-content-center">
+		<div class='col-6'>
+			
+		
+	
+  <h1> <i class="fa-solid fa-eye text-muted"></i> View Post</h1>
+
+  <a href="#" routerLink="/students/index" class="btn btn-primary"> <i class="fa-solid fa-arrow-left"></i> Back</a>
+<div class="justify-content-center my-3">
+  <div class="card ">
+    <div class="card-body shadow shadow-lg " *ngIf="student">
+      <div>
+        <strong>ID:</strong>
+        <p>{{ student.id }}</p>
+      </div>
+
+      <div>
+        <strong>First Name:</strong>
+        <p>{{ student.fname }}</p>
+      </div>
+      <div>
+        <strong>Last Name:</strong>
+        <p>{{ student.lname }}</p>
+      </div>
+
+      <div>
+        <strong>Age:</strong>
+        <p>{{ student.age }} Years Old</p>
+      </div>
+      <div>
+        <strong>room class:</strong>
+        <p>{{ student.room_class }}</p>
+      </div>
+      <div>
+        <strong>Created at:</strong>
+        <p>{{ student.created_at }}</p>
+   
+  		</div>
+
+  		<a href="#" [routerLink]="['/student/', student.id, 'edit']" class="btn btn-primary mx-2"><i class="fa-solid fa-pen"></i> Edit</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
